@@ -8,9 +8,9 @@ public interface UserDao {
 
     User findById(String id);
 
-    //User update(String username, char[] password);
+    User updatePassword(String id, String newPassword);
 
-    User delete();
+    User delete(String id);
 
 
 }

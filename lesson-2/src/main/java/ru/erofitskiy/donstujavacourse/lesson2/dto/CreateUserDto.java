@@ -1,4 +1,4 @@
-package ru.erofitskiy.donstujavacourse.lesson2;
+package ru.erofitskiy.donstujavacourse.lesson2.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 

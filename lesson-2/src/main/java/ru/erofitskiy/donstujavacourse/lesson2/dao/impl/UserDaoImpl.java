@@ -1,10 +1,8 @@
 package ru.erofitskiy.donstujavacourse.lesson2.dao.impl;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 import ru.erofitskiy.donstujavacourse.lesson2.dao.UserDao;
 import ru.erofitskiy.donstujavacourse.lesson2.exception.NotFoundException;
-import ru.erofitskiy.donstujavacourse.lesson2.model.Account;
 import ru.erofitskiy.donstujavacourse.lesson2.model.User;
 
 import java.util.HashMap;
@@ -38,7 +36,23 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public User delete() {
+    public User updatePassword(String id, String newPassword){
+        if (repository.containsKey(id)) {
+            User user = repository.get(id);
+            user.setPassword(newPassword);
+            return user;
+        }
+        throw new NotFoundException();
+    }
+
+
+    @Override
+    public User delete(String id) {
+        if (repository.containsKey(id)) {
+            User user = repository.get(id);
+            repository.remove(id);
+            return user;
+        }
         return null;
     }
 }
