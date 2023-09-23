@@ -24,8 +24,13 @@ public class AccountDaoImpl implements AccountDao {
 
     @Override
     public Account findByUserId(String userId) {
-        Account result = repository.get(userId);
-
+        Account result = null;
+        for (Map.Entry<String, Account> entry : repository.entrySet()) {
+            if (entry.getValue().getUserId().equals(userId)) {
+                result = entry.getValue();
+                break;
+            }
+        }
         if (result != null) {
             return result;
         }
