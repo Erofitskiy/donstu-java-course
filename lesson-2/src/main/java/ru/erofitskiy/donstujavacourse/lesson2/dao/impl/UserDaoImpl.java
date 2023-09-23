@@ -28,7 +28,6 @@ public class UserDaoImpl implements UserDao {
     @Override
     public User findById(String id) {
         User user = repository.get(id);
-
         if (user != null) {
             return user;
         }

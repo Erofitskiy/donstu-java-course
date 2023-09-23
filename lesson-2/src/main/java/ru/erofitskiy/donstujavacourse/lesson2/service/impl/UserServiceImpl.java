@@ -11,10 +11,11 @@ import ru.erofitskiy.donstujavacourse.lesson2.service.UserService;
 @Component
 public class UserServiceImpl implements UserService {
 
-    UserDao dao = new UserDaoImpl();
+    private final UserDao dao = new UserDaoImpl();
 
     @Override
     public User createUser(CreateUserDto requestBody) {
+        // здесь могла бы быть ваша реклама
         return dao.create(requestBody.firstName(), requestBody.username(), requestBody.password());
     }
 
@@ -32,10 +33,11 @@ public class UserServiceImpl implements UserService {
     public User changePassword(ChangePasswordDto dto) {
         User user = dao.findById(dto.id());
         if (user.getPassword().equals(dto.oldPassword())) {
-
+            dao.updatePassword(dto.id(), dto.newPassword());
+        } else {
+            throw new RuntimeException("Неверный пароль");
         }
-
-
-        return null;
+        user.setPassword(dto.newPassword());
+        return user;
     }
 }
