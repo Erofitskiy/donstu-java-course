@@ -31,7 +31,6 @@ public class UserDaoImpl implements UserDao {
     public User findById(String id) {
         System.out.println(repository);
         User user = repository.get(id);
-
         if (user != null) {
             return user;
         }
