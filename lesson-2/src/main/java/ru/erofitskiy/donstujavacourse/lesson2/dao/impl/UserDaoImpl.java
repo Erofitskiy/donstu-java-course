@@ -1,5 +1,6 @@
 package ru.erofitskiy.donstujavacourse.lesson2.dao.impl;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import ru.erofitskiy.donstujavacourse.lesson2.dao.UserDao;
 import ru.erofitskiy.donstujavacourse.lesson2.exception.NotFoundException;
@@ -10,6 +11,7 @@ import java.util.Map;
 import java.util.UUID;
 
 @Component
+@Scope("singleton")
 public class UserDaoImpl implements UserDao {
 
     Map<String, User> repository = new HashMap<>();
@@ -27,6 +29,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public User findById(String id) {
+        System.out.println(repository);
         User user = repository.get(id);
 
         if (user != null) {

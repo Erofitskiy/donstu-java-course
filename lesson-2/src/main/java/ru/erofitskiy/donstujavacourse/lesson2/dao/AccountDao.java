@@ -9,9 +9,9 @@ public interface AccountDao {
 
     Account findById(String id);
 
-    void changeBalance(double amount);
+    Account setBalance(String accountId, double amount);
 
-    boolean delete();
+    Account delete(String accountId);
 
 
 }

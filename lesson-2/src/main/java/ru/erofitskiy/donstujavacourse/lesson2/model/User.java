@@ -1,10 +1,15 @@
 package ru.erofitskiy.donstujavacourse.lesson2.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.ToString;
+
+@ToString
 public class User {
     private String id;
     private String firstName;
 
     private String username;
+    @JsonIgnore
     private String password;
 
 

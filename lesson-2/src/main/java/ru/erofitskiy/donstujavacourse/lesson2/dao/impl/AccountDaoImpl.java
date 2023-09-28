@@ -1,5 +1,6 @@
 package ru.erofitskiy.donstujavacourse.lesson2.dao.impl;
 
+import org.springframework.stereotype.Component;
 import ru.erofitskiy.donstujavacourse.lesson2.dao.AccountDao;
 import ru.erofitskiy.donstujavacourse.lesson2.exception.NotFoundException;
 import ru.erofitskiy.donstujavacourse.lesson2.model.Account;
@@ -8,6 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
+@Component
 public class AccountDaoImpl implements AccountDao {
 
     Map<String, Account> repository = new HashMap<>();
@@ -39,18 +41,22 @@ public class AccountDaoImpl implements AccountDao {
 
     @Override
     public Account findById(String id) {
-        return null;
+        Account account = repository.get(id);
+        if (account == null) {
+            throw new NotFoundException();
+        }
+        return account;
     }
 
     @Override
-    public void changeBalance(double amount) {
-
+    public Account setBalance(String accountId, double amount) {
+        Account account = findById(accountId);
+        account.setBalance(amount);
+        return account;
     }
 
     @Override
-    public boolean delete() {
-        return false;
+    public Account delete(String accountId) {
+        return repository.remove(accountId);
     }
-
-
 }
