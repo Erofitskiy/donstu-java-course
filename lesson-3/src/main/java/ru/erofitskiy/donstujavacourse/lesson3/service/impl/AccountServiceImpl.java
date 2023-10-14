@@ -1,13 +1,11 @@
-package ru.erofitskiy.donstujavacourse.lesson2.service.impl;
+package ru.erofitskiy.donstujavacourse.lesson3.service.impl;
 
 import org.springframework.stereotype.Service;
-import ru.erofitskiy.donstujavacourse.lesson2.dao.AccountDao;
-import ru.erofitskiy.donstujavacourse.lesson2.dao.UserDao;
-import ru.erofitskiy.donstujavacourse.lesson2.dao.impl.AccountDaoImpl;
-import ru.erofitskiy.donstujavacourse.lesson2.dao.impl.UserDaoImpl;
-import ru.erofitskiy.donstujavacourse.lesson2.exception.NotFoundException;
-import ru.erofitskiy.donstujavacourse.lesson2.model.Account;
-import ru.erofitskiy.donstujavacourse.lesson2.service.AccountService;
+import ru.erofitskiy.donstujavacourse.lesson3.dao.AccountDao;
+import ru.erofitskiy.donstujavacourse.lesson3.dao.UserDao;
+import ru.erofitskiy.donstujavacourse.lesson3.exception.NotFoundException;
+import ru.erofitskiy.donstujavacourse.lesson3.model.Account;
+import ru.erofitskiy.donstujavacourse.lesson3.service.AccountService;
 
 @Service
 public class AccountServiceImpl implements AccountService {
@@ -30,12 +28,12 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public Double getBalanceById(String accountId) {
-        return accountDao.findById(accountId).getBalance();
+        return accountDao.findById(accountId).get().getBalance();
     }
 
     @Override
     public Account findById(String accountId) {
-        return accountDao.findById(accountId);
+        return accountDao.findById(accountId).get();
     }
 
     @Override

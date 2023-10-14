@@ -1,12 +1,12 @@
-package ru.erofitskiy.donstujavacourse.lesson2.controller;
+package ru.erofitskiy.donstujavacourse.lesson3.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import ru.erofitskiy.donstujavacourse.lesson2.dto.account.CreateAccountDto;
-import ru.erofitskiy.donstujavacourse.lesson2.dto.account.GetBalanceDto;
-import ru.erofitskiy.donstujavacourse.lesson2.model.Account;
-import ru.erofitskiy.donstujavacourse.lesson2.service.AccountService;
+import ru.erofitskiy.donstujavacourse.lesson3.dto.account.CreateAccountDto;
+import ru.erofitskiy.donstujavacourse.lesson3.dto.account.GetBalanceDto;
+import ru.erofitskiy.donstujavacourse.lesson3.model.Account;
+import ru.erofitskiy.donstujavacourse.lesson3.service.AccountService;
 
 @RestController
 @RequestMapping("/api/v1/accounts")

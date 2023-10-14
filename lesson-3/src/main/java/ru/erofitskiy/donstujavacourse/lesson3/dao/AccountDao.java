@@ -1,17 +1,21 @@
-package ru.erofitskiy.donstujavacourse.lesson2.dao;
+package ru.erofitskiy.donstujavacourse.lesson3.dao;
 
-import ru.erofitskiy.donstujavacourse.lesson2.model.Account;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+import ru.erofitskiy.donstujavacourse.lesson3.model.Account;
 
-public interface AccountDao {
+
+@Repository
+public interface AccountDao extends CrudRepository<Account, String> {
     Account create(String userId);
 
     Account findByUserId(String userId);
 
-    Account findById(String id);
+//    Account findById(String id);
 
     Account setBalance(String accountId, double amount);
 
-    Account delete(String accountId);
+//    Account delete(String accountId);
 
 
 }

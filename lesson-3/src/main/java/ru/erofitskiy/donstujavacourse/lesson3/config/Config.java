@@ -1,18 +1,15 @@
-package ru.erofitskiy.donstujavacourse.lesson2.config;
+package ru.erofitskiy.donstujavacourse.lesson3.config;
 
-import org.springframework.context.annotation.Bean;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import ru.erofitskiy.donstujavacourse.lesson2.dao.UserDao;
-import ru.erofitskiy.donstujavacourse.lesson2.dao.impl.UserDaoImpl;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Configuration
-@ComponentScan(basePackages = "ru.erofitskiy.donstujavacourse.lesson2")
+@ComponentScan(basePackages = "ru.erofitskiy.donstujavacourse.lesson3")
+@EnableJpaRepositories(basePackages = "ru.erofitskiy.donstujavacourse.lesson3")
+@EntityScan(basePackages = "ru.erofitskiy.donstujavacourse.lesson3.model")
 public class Config {
 
-    @Bean
-    public UserDao userDao() {
-        return new UserDaoImpl();
-    }
 
 }

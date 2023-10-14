@@ -1,20 +1,20 @@
-package ru.erofitskiy.donstujavacourse.lesson2.dao.impl;
+package ru.erofitskiy.donstujavacourse.lesson3.dao.impl;
 
 import org.springframework.stereotype.Component;
-import ru.erofitskiy.donstujavacourse.lesson2.dao.AccountDao;
-import ru.erofitskiy.donstujavacourse.lesson2.exception.NotFoundException;
-import ru.erofitskiy.donstujavacourse.lesson2.model.Account;
+import ru.erofitskiy.donstujavacourse.lesson3.dao.AccountDao;
+import ru.erofitskiy.donstujavacourse.lesson3.exception.NotFoundException;
+import ru.erofitskiy.donstujavacourse.lesson3.model.Account;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
 @Component
-public class AccountDaoImpl implements AccountDao {
+public class AccountDaoImpl {
 
     Map<String, Account> repository = new HashMap<>();
 
-    @Override
+//    @Override
     public Account create(String userId) {
         Account account = new Account();
         account.setId(UUID.randomUUID().toString());
@@ -24,7 +24,7 @@ public class AccountDaoImpl implements AccountDao {
         return account;
     }
 
-    @Override
+//    @Override
     public Account findByUserId(String userId) {
         Account result = null;
         for (Map.Entry<String, Account> entry : repository.entrySet()) {
@@ -39,7 +39,7 @@ public class AccountDaoImpl implements AccountDao {
         throw new NotFoundException();
     }
 
-    @Override
+//    @Override
     public Account findById(String id) {
         Account account = repository.get(id);
         if (account == null) {
@@ -48,14 +48,14 @@ public class AccountDaoImpl implements AccountDao {
         return account;
     }
 
-    @Override
+//    @Override
     public Account setBalance(String accountId, double amount) {
         Account account = findById(accountId);
         account.setBalance(amount);
         return account;
     }
 
-    @Override
+//    @Override
     public Account delete(String accountId) {
         return repository.remove(accountId);
     }

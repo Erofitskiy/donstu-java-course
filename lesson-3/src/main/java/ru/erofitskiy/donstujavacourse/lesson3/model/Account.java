@@ -1,10 +1,21 @@
-package ru.erofitskiy.donstujavacourse.lesson2.model;
+package ru.erofitskiy.donstujavacourse.lesson3.model;
 
+
+import jakarta.persistence.*;
+import lombok.Data;
+
+@Data
+@Entity
+@Table(name = "accounts")
 public class Account {
-    private String id;
-    private String userId;
-    private double balance;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private String id;
+
+    private String userId;
+
+    private double balance;
 
     public String getId() {
         return id;

@@ -1,14 +1,14 @@
-package ru.erofitskiy.donstujavacourse.lesson2.controller;
+package ru.erofitskiy.donstujavacourse.lesson3.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.erofitskiy.donstujavacourse.lesson2.dto.user.ChangePasswordDto;
-import ru.erofitskiy.donstujavacourse.lesson2.dto.user.CreateUserDto;
-import ru.erofitskiy.donstujavacourse.lesson2.exception.NotFoundException;
-import ru.erofitskiy.donstujavacourse.lesson2.model.User;
-import ru.erofitskiy.donstujavacourse.lesson2.service.UserService;
+import ru.erofitskiy.donstujavacourse.lesson3.dto.user.ChangePasswordDto;
+import ru.erofitskiy.donstujavacourse.lesson3.dto.user.CreateUserDto;
+import ru.erofitskiy.donstujavacourse.lesson3.exception.NotFoundException;
+import ru.erofitskiy.donstujavacourse.lesson3.model.User;
+import ru.erofitskiy.donstujavacourse.lesson3.service.UserService;
 
 @RestController
 @RequestMapping("api/v1/users")

@@ -1,6 +1,6 @@
-package ru.erofitskiy.donstujavacourse.lesson2.service;
+package ru.erofitskiy.donstujavacourse.lesson3.service;
 
-import ru.erofitskiy.donstujavacourse.lesson2.model.Account;
+import ru.erofitskiy.donstujavacourse.lesson3.model.Account;
 
 public interface AccountService {
 

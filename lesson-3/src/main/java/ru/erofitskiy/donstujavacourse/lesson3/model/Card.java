@@ -1,4 +1,4 @@
-package ru.erofitskiy.donstujavacourse.lesson2.model;
+package ru.erofitskiy.donstujavacourse.lesson3.model;
 
 public class Card {
     private String id;
